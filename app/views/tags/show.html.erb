@@ -8,7 +8,9 @@
 
 
 <h5>
-<p><%= link_to "delete", tag_path(@tag), method: :delete, data: {confirm: "Really delete the tag?"}
-%></p>
+<% if logged_in? %>
+	<p><%= link_to "delete", tag_path(@tag), method: :delete, data: {confirm: "Really delete the tag?"}
+	%></p>
+<% end %>
 <p><%= link_to "Tag List", tags_path %></p>
 </h5>
